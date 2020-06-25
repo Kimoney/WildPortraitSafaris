@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Contact Us</title>
+  </head>
+  <body>
+
+<!-- ======= Contact Us HEADING ======= -->
+
+<div id="slides" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="{% static '/img/contact_us.jpg' %}" height="420" width="100%">
+          <div class="carousel-caption">
+            <h4 class="display-4" style="font-style: italic; color: orange; font-family: monospace;">Get in touch with your best travel partner</h4>
+          </div>
+      </div>
+    </div>
+</div><!-- ======= Contact Us HEADING ENDING ======= -->
+
+<!-- ======= Contact Us ======= -->
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+          
+          <div class="col-lg-4" style="padding: 2rem;">
+              <div class="row justify-content-center">
+                <i class="fas fa-at"></i>
+              </div>
+              <div class="row justify-content-center">
+                <article>
+                  info@wildportraitsafaris.com <br> booking@wildportraitsafaris.com
+                </article>
+              </div>              
+          </div>
+
+          <div class="col-lg-4" style="padding: 2rem;">
+              <div class="row justify-content-center">
+                <i class="fas fa-at"></i>
+              </div>
+              <div class="row justify-content-center">
+                <article>
+                  +254 722 321 456 <br>
+                  +254 739 456 123 <br>
+                  +254 763 123 000 <br>
+                </article>
+              </div>              
+          </div>
+
+          <div class="col-lg-4" style="padding: 2rem;">
+              <div class="row justify-content-center">
+                <i class="fas fa-at"></i>
+              </div>
+              <div class="row justify-content-center">
+                <article>
+                  A Certain Builing. 4th Floor. <br> Standard Street, Nairobi
+              </div>              
+                </article>
+            </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+  <!-- Infomation Column -->
+    <section class="col-lg-6">
+      <div id="map-container-google-9" class="z-depth-1-half map-container-5" style="">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8152988648126!2d36.820842014124835!3d-1.2847696990629163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d66a22fb15%3A0xb0912f03b09ae5b!2sRehema%20House!5e0!3m2!1sen!2sus!4v1591981521464!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+      
+    </section>
+  <!-- Form Column-->
+    <section class="col-lg-6">
+      <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputFirstName">First Name</label>
+              <input type="text" class="form-control" id="inputFirstName">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputSecondName">Second Name</label>
+              <input type="text" class="form-control" id="inputSecondName">
+            </div>            
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputSubject">Subject</label>
+              <input type="text" class="form-control" id="inputSubject">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </section>
+  
+  </div>  
+</div>
+
+<hr>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
+{% endblock %}

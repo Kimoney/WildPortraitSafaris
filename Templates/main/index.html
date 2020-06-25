@@ -1,0 +1,499 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link a href="{% static './css/main/mystyle.css' %}" rel="stylesheet"/>
+
+    <title>Wild Portrait Safaris | Home </title>
+  </head>
+  <body>
+
+<!--===== Intro Image ===== -->
+
+<div id="slides" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="{% static '/img/home.jpg' %}">
+          <div class="carousel-caption">
+            <h1 class="display-4">Wild Portrait Safaris</h1>
+            <h3> Experiencing nature at it's best</h3>
+            <a href="{% url 'safaripackages_view' %}">
+            <button type="button" class="btn btn-outline-light btn-lg"> View Safari Packages</button>
+            </a>
+            <a href="{% url 'inquiry' %}">
+            <button type="button"  class="btn btn-outline-light btn-lg"> Customize Your Itenary</button>
+            </a>
+          </div>
+      </div>
+    </div>
+</div>
+
+<!-- ===== Welcome Section ===== -->
+<div class="container-fluid padding">
+<div class=" row welcome text-center">
+    <div class="col-12">
+      <h1 class="display-4"> Who Are We?</h1>
+    </div>
+    <hr>
+
+    <div class="col-12">
+      <p class="lead">Wild Portraits Safaris is a safari outfitter based in Kenya. We are dedicated to provide wildlife enthusiasts, campers, hikers, as well as photographers with the best game viewing experience possible.</p>
+    </div>
+</div>
+</div>
+
+<!-- ===== Three Column Section ===== -->
+
+<div class="container-fluid padding">
+  <div class="row text-center padding">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <i class="fas fa-certificate"></i>
+        <h5>Certified Professional</h5>
+        <article id="whoarewe">
+        Wild Portrait Safaris is a professional safari outfitter. We help you plan your itineraries packages competently to give you the most authentic safari as per your aspirations. We attribute our success to a flexible team of professionals. Wild Portraits Safari guides are all accredited members of KPSGA (Kenya Professional Safari Guides Association) at silver and gold levels. These are highly qualified guides who will provide you with best experience in the field.
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <i class="fas fa-analytics"></i>
+        <h5>Experience In The East Africa Parks</h5>
+        <article>Rolling savannahs thundering with wildlife contrast with sultry land of palmy beaches bathed by the Indian ocean and imbued with a thousand years of Swahili history. A String of jewel -like lakes dot the yawning fault line of the rift valley while the gorilla inhabited mountains of Uganda and Rwanda call. Lets explore the word renown slices of paradise together from the Serengeti to Amboseli</article>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <i class="fas fa-camera"></i>
+        <h5>Well Thought Of Plan</h5>
+        <article>With you on every step in planning your safari so as to cater for your specific needs as you explore our beautiful, we advise on the best and strategically located facilities, best itinerary flow depending on your areas of interest and having over 10 years’ experience we are your best safari companions
+        </article>
+    </div>
+  
+  </div>
+  <hr class="my-4">
+</div>
+
+
+<!-- ===== Button ===== -->
+
+
+<div class="container-fluid welcomecard">
+  <div class="row-justify-center ">
+    <div class="card text-white bg-secondary mb-3 w-80">
+      <div class="card-body row">
+        <p class="card-text col-md-10">With supporting text below as a natural lead-in to additional content with supporting text below as a natural lead-in to additional content
+        </p>
+        <a href="#" class="btn btn-primary col-md-2">Customize My Iteniary</a>
+      </div>
+    </div>      
+  </div>
+</div>
+
+<!-- ===== Safari Packages ===== -->
+
+<div class="container-fluid padding" id="safaris">
+  <div class="row text-center padding">
+    <div class="col-12">
+      <article class="display-4"> Our Itenary Packages </article>
+    </div>
+    <hr>
+  <div class=" container-fluid row text-center">
+    {% for safaripackage in all_safaripackages %}
+      <div class="col-md-3">
+        <div class="card mb-2 shadow">
+          <img class="card-img-top"
+            src="{{ MEDIA_URL}} {{ safaripackage.image.url }}"
+            alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">{{ safaripackage.title|title}}</h4>
+          <p><i class="far fa-calendar-alt"></i> {{ safaripackage.days|floatformat }} Days and {{ safaripackage.nights|floatformat }} Nights</p>
+            <p><i class="fas fa-dollar-sign"></i> {{ safaripackage.cost|floatformat }} Per Person</p>
+            <hr class="my-4">
+            <p class="card-text">{{ safaripackage.telegram }}</p>
+            <a href="{% url 'single_safaripackage' safaripackage.pk %}" class="btn btn-primary">View Details</a>
+        </div>
+        </div>
+      </div>
+
+{% endfor %}
+  
+  </div>
+
+  <div class=" container text-center">
+    <a href="{% url 'safaripackages_view' %}"> <button type="button" class="btn btn-secondary btn-lg btn-block shadow">View more safari packages</button> </a>
+  </div>
+</div>
+</div>
+<hr class="my-4">
+
+
+<!-- ===== Our Services ===== -->
+
+<div class="container-fluid padding" id="safaris">
+  <div class="row text-center padding">
+    <div class="col-12">
+      <article class="display-4"> Our Services </article>
+    </div>
+    <hr>
+
+  <div class=" containter-fluid row justify-content-center">    
+    <div class="card shadow" id="services">
+      <div class="card-body">
+        <i class="fa fa-bath" aria-hidden="true"></i>
+        <h4 class="card-title"> Camping Safaris</h4>
+      </div>
+    </div>
+
+    <div class="card shadow" id="services">
+      <div class="card-body">
+        <i class="fas fa-plane" style="font-size: 60px; margin: 1rem;"></i>
+        <h4 class="card-title"> Airport Transfers</h4>
+      </div>
+    </div>
+
+    <div class="card shadow" id="services">
+      <div class="card-body">
+        <i class="fas fa-plane" style="font-size: 60px; margin: 1rem;"></i>
+        <h4 class="card-title"> Tour Guiding </h4>
+      </div>
+    </div>
+
+    <div class="card shadow" id="services">
+      <div class="card-body">
+        <i class="fas fa-plane" style="font-size: 60px; margin: 1rem;"></i>
+        <h4 class="card-title"> Hotel Booking </h4>
+      </div>
+    </div>
+
+    <div class="card shadow" id="services">
+      <div class="card-body">
+        <i class="fas fa-plane" style="font-size: 60px; margin: 1rem;"></i>
+        <h4 class="card-title"> Airport Transfers</h4>
+      </div>
+    </div>
+
+    <div class="card shadow" id="services">
+      <div class="card-body">
+        <i class="fas fa-plane" style="font-size: 60px; margin: 1rem;"></i>
+        <h4 class="card-title"> Airport Transfers</h4>
+      </div>
+    </div>
+
+    <div class="card shadow" id="services">
+      <div class="card-body">
+        <i class="fas fa-plane" style="font-size: 60px; margin: 1rem;"></i>
+        <h4 class="card-title"> Airport Transfers</h4>
+      </div>
+    </div>
+
+    <div class="card shadow" id="services">
+      <div class="card-body">
+        <i class="fas fa-plane" style="font-size: 60px; margin: 1rem;"></i>
+        <h4 class="card-title"> Airport Transfers</h4>
+      </div>
+    </div>
+
+  </div>  
+</div>
+<hr class="my-4">
+
+ 
+<!-- ===== Why Choose Us  ===== -->
+
+<div class="container-fluid padding" id="safaris">
+  <div class="row text-center padding">
+    <div class="col-12">
+      <article class="display-4"> Why Travel With Us </article>
+    </div>
+    <hr>
+
+    <div class="container-fluid padding">
+      <div class="row padding">
+          <div class="col-md-12 col-lg-6">
+            <div class="row">
+              <div class="col-xs-2 col-md-2">
+                <i class="fa fa-check-circle-o"></i>
+              </div>
+              <div class="col-xs-10 col-md-10">
+                <article style="text-align: left">
+                Our guides are highly qualified and experienced in working with international photographing and film teams. Therefore, they are an essential factor in the success of your safari.</article>
+              </div>              
+            </div>
+
+            <div class="row">
+              <div class="col-xs-2 col-md-2">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+              </div>
+              <div class="col-xs-10 col-md-10">
+                <article style="text-align: left">
+                  Wild Portrait Safaris has extensive experience in guiding and creating itinery packages in East Africa for a variety of clients. As a travel partner we bring vast experience to compliment your desired safari.
+                </article>
+              </div>              
+            </div>
+            <div class="row">
+              <div class="col-xs-2 col-md-2">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="col-xs-10 col-md-10">
+                <article style="text-align: left">
+                  Every safari is unique and requires different types of vehicles. We provide customized safari vehicles to compliment your photographic, family or budget safari.
+                </article>
+              </div>              
+            </div>
+            <div class="row">
+              <div class="col-xs-2 col-md-2">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="col-xs-10 col-md-10">
+                <article style="text-align: left">
+                  We handpick hotels and accomodation that specificaally suits your safari package. This is an important aspect of the safari, since it serves as a perfect foil and unwinding location after a successful day in the wild.
+                </article>
+              </div>              
+            </div>
+
+          </div>
+
+<!-- Youtube -->          
+          <div class="col-lg-6">
+            <div class="row">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/l__qbQkAET0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <span>
+                            <div class="row">
+              <div class="col-xs-2 col-md-2">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="col-xs-10 col-md-10">
+                <article style="text-align: left">
+                  Every safari is unique and requires different types of vehicles. We provide customized safari vehicles to compliment your photographic, family or budget safari.
+                </article>
+              </div>              
+            </div>
+                
+              </span>
+            </div>
+          </div>
+      </div>
+    </div>  
+  </div>
+</div>
+<hr class="my-4">
+
+<!-- ===== Meet The Team ===== -->
+
+<div class="container-fluid padding">
+<div class="row welcome text-center">
+    <div class="col-12">
+      <h1 class="display-4"> Meet The Team </h1>
+    </div>
+    <hr>
+</div>
+</div>
+
+<!-- Cards Section-->
+
+<div class="container-fluid padding">
+<div class="row padding">
+  <div class="col-md-4 text-center">  
+    <div class="card shadow">
+        <img class="card-img-top" src="{% static '/img/Bro.jpg' %}">
+        <div class="card-body">
+              <h4>Walter White</h4>
+              <span>Chief Executive Officer</span>
+              <p>
+                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+              </p>
+              <div class="social">
+                <a href=""><i class="icofont-twitter"></i></a>
+                <a href=""><i class="icofont-facebook"></i></a>
+                <a href=""><i class="icofont-instagram"></i></a>
+                <a href=""><i class="icofont-linkedin"></i></a>
+              </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 text-center">  
+    <div class="card shadow">
+        <img class="card-img-top " src="{% static '/img/Bro.jpg' %}">
+        <div class="card-body">
+              <h4>Walter White</h4>
+              <span>Chief Executive Officer</span>
+              <p>
+                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+              </p>
+              <div class="social">
+                <a href=""><i class="icofont-twitter"></i></a>
+                <a href=""><i class="icofont-facebook"></i></a>
+                <a href=""><i class="icofont-instagram"></i></a>
+                <a href=""><i class="icofont-linkedin"></i></a>
+              </div>
+        </div>
+    </div>
+  </div>
+    <div class="col-md-4 text-center">  
+    <div class="card shadow">
+        <img class="card-img-top" src="{% static '/img/Bro.jpg' %}">
+        <div class="card-body">
+              <h4>Walter White</h4>
+              <span>Chief Executive Officer</span>
+              <p>
+                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+              </p>
+              <div class="social">
+                <a href=""><i class="icofont-twitter"></i></a>
+                <a href=""><i class="icofont-facebook"></i></a>
+                <a href=""><i class="icofont-instagram"></i></a>
+                <a href=""><i class="icofont-linkedin"></i></a>
+              </div>
+        </div>
+    </div>
+  </div>
+    
+</div>
+</div> 
+<!-- ===== Blog Section ===== -->
+
+
+<div class="container-fluid padding" id="safaris">
+  <div class="row text-center padding">
+    <div class="col-12">
+      <article class="display-4"> Stories From Some Of Our Experiences</article>
+    </div>
+    <hr>
+  
+  <div class=" container-fluid row text-center">
+  {% for blog in all_blogs %}
+      <div class="col-md-6">
+        <div class="card-column mb-2 shadow">
+          <div class="row">
+          <img class="card-img col-md-4"
+            src="{{ MEDIA_URL}} {{ blog.image.url }}"
+            alt="Card image cap">
+        <div class="card-body col-md-8">
+          <h4 class="card-title">{{blog.title}}</h4>
+          <p class="card-text">{{blog.introduction}}Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p><small class="blockquote-footer">By <cite title="Source Title">{{ blog.author }}</cite></small>
+          <p> <small class="text-muted">Created on {{ blog.created }}</small> </p>
+        </div>
+        </div>
+        </div>
+      </div>
+  {% endfor %}
+ 
+  </div>
+
+  <div class=" container text-center">
+    <button type="button" class="btn btn-secondary btn-lg btn-block shadow">View more of our blogs</button>
+  </div>
+</div>
+</div>
+<hr class="my-4">
+
+<!-- ===== Testimonials ===== -->
+
+<div class="container-fluid padding">
+<div class="row welcome text-center">
+    <div class="col-12">
+      <h1 class="display-4"> Testimonials </h1>
+    </div>
+    <hr>
+</div>
+</div>
+
+
+
+<!-- slider -->
+
+<div id="slides" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        <li data-target="#slides" data-slide-to="0" class="active"></li>
+        <li data-target="#slides" data-slide-to="1" ></li>
+        <li data-target="#slides" data-slide-to="2" ></li>
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+         
+            <div class="card" style="width: 60rem; height: 18rem;" >
+              <div class="row">
+                  <div class="col-xs-3 col-md-3">
+                    <img src="{% static '/img/jay.jpg' %}" height="120" width="120" class=" rounded-circle">        
+                      <p class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></p> 
+                  </div>
+                
+                  <div class="col-xs-9 col-md-9" style="padding: 2rem;"> 
+                    <div class="card-body">
+                      <blockquote class="blockquote mb-0">
+                        <p><i class="fa fa-quote-left" aria-hidden="true"></i> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right" aria-hidden="true"></i></p>
+                      </blockquote>
+                    </div>
+                  </div>
+                
+              </div>     
+            
+            </div>
+      
+
+      </div>
+      <div class="carousel-item">
+            <div class="card" style="width: 60rem; height: 18rem;" >
+              <div class="row">
+                  <div class="col-xs-3 col-md-3">
+                    <img src="{% static '/img/jay.jpg' %}" height="auto" width="auto" class=" rounded-circle">        
+                      <p class="blockquote-footer" style="padding-top: 1.5rem;">Someone famous in <cite title="Source Title">Source Title</cite></p> 
+                  </div>
+                
+                  <div class="col-xs-9 col-md-9" style="padding: 2rem;"> 
+                    <div class="card-body">
+                      <blockquote class="blockquote mb-0">
+                        <p><i class="fa fa-quote-left" aria-hidden="true"></i> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right" aria-hidden="true"></i></p>
+                      </blockquote>
+
+                    </div>
+                  </div>
+                
+              </div>     
+            
+            </div>
+      </div>
+      <div class="carousel-item">
+      <div class="card" style="width: 60rem; height: 18rem;" >
+              <div class="row">
+                  <div class="col-xs-3 col-md-3">
+                    <img src="{% static '/img/jay.jpg' %}" height="auto" width="auto" class=" rounded-circle">
+                    <p class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></p>        
+                  </div>
+                
+                  <div class="col-xs-9 col-md-9" style="padding: 2rem;"> 
+                    <div class="card-body">
+                      <blockquote class="blockquote mb-0">
+                        <p><i class="fa fa-quote-left" aria-hidden="true"></i> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right" aria-hidden="true"></i></p>
+                      </blockquote> 
+                    </div>
+                  </div>
+                
+              </div>     
+            
+            </div>
+      </div>
+
+    </div>
+</div>
+ <!-- container main-->
+<hr>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+{% endblock %}
+</html>

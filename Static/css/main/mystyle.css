@@ -1,0 +1,99 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  color: rgb(83, 85, 83);
+}
+
+#slides .carousel-inner img {
+  height: 30% !important;
+  width: 100% !important;
+}
+.carousel {
+  font-family: cursive;
+}
+#slides .carousel-caption {
+  position: absolute;
+  display: inline-block;
+  text-align: left;
+}
+#slides .carousel-caption h1 {
+  font-size: ;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 15px orange;
+  color: black !important
+}
+#slides .carousel-caption h3 {
+  font-size: 200%;
+  font-weight: 200;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 10px orange;
+  padding-bottom: 1rem;
+  color: black !important
+}
+.btn-primary a {
+  background-color: orange;
+  border: 1px solid orange; 
+}
+.btn-primary:hover a {
+  background-color: orange ;
+  color: 1px solid orange;
+}
+.btn-outline-light:hover a {
+background-color: orange ;
+  color: 1px solid orange;
+}
+#whoarewe {
+    padding: 2rem;  
+}
+.welcome {
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+.welcome hr {
+  border-top: 2px solid #b4b4b4;
+  width: 90%;
+  margin-top: .3rem;
+  margin-bottom: 1rem;
+}
+.fa-code {
+  color: orangered;
+}
+.fa-bold {
+  color: purple;
+}
+.fa-desktop {
+  color: blue;
+}
+
+.fa-certificate, .fa-analytics, .fa-camera {
+  font-size: 60px;
+  color:  orange;
+  margin: 1rem;
+}
+#safaris hr { 
+  border-top: 2px solid #b4b4b4;
+  width: 90%;
+  margin-top: .3rem;
+  margin-bottom: 1rem;
+}
+#safaris button {
+  background-color: orange;
+  border: 1px solid orange; 
+}
+#safaris button:hover {
+  background-color: cyan;
+  border: 1px solid white; 
+}
+#services {
+	width: 15rem;
+	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+	margin-top: 1rem;
+}
+
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}

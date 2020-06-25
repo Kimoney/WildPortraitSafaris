@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>About Us</title>
+  </head>
+  <body>
+
+<!-- ======= About Us HEADING ======= -->
+
+<div id="slides" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="{% static '/img/about.jpg' %}" height="420" width="100%">
+          <div class="carousel-caption">
+            <h1 class="display-4">About Us</h1>
+          </div>
+      </div>
+    </div>
+</div><!-- ======= About Us HEADING ENDING ======= -->
+
+<!-- ======= About Us ======= -->
+<div class="jumbotron-fluid">
+  <div class="row justify-content-center">
+  <section class=" col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">
+          <h3 class="display-4">
+            About Us
+          </h3>
+        </div>
+        <article class="class-text" style="">
+          t hand to help you plan our itineraries are only basic guidelines and we prefer tailor making your safari with you to give you the most authentic safari as per your aspirations, at hand is a flexible team, who are dedicated to take every step with you as you plan your East Africa safari more than a job yes our guides are passionate about what they do and they being the vital link, either they make or break a safari, therefore, we cannot gamble on this. Wild Portraits Safari guides are all 
+        </article>        
+      </div>      
+    </div>
+    
+  </section>
+  <section class="col-lg-6">
+    <div class="card" >
+      <img src="{% static '/img/lgo.png' %}" class="card-img-top" alt="...">
+    </div>
+  </section>
+
+</div>
+  
+</div>
+
+<hr>
+<!-- ======= About Us HEADING ENDING ======= -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
+{% endblock %}

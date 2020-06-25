@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" a href="{% static '/css/bootstrap.css' %}"/>
+    <link rel="stylesheet" a href="{% static '/css/fonts.css' %}"/>
+    <title>Packages</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body style=" background-image: url({% static '/img/zebraa background.jpg' %})!important; 
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;">
+    <style type="text/css">
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 20px 0 20px 0;
+  background: #f7f7f7;
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 40px;
+}
+
+.breadcrumbs h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #545454;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 5px 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #6e6e6e;
+  content: "/";
+}</style>
+
+<!-- ======= SAFARI PACKAGE HEADING ======= -->
+<header>
+
+<div class="card bg-dark text-white">
+  <img class="card-img" src="{{safaripackage.image.url}}" height="500" width="auto" alt="Card image">
+  <div class="card-img-overlay text-center" style="position:absolute;top:0;left:0;height:100%;width:100%;background-color:#212529;opacity:.5;">
+    <h3 class="card-title display-4">{{ safaripackage.title }}</h3>
+    <h4 class="card-text display-10">
+      <h4> From {{safaripackage.exodus}} To {{safaripackage.destination}} <br/> For {{safaripackage.days}} Days and {{safaripackage.nights}} Nights</h4>
+        <h5> At {{safaripackage.cost}} Per Person</h5>
+    </h4>
+    <p> {{safaripackage.overview}} </p>
+  </div>
+</div>
+
+</header>
+<!-- ======= SAFARI PACKAGE HEADING ======= -->
+
+<!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+        <div class="row-justify-centre">
+          <ol>
+            <li><a href="http://127.0.0.1:8000/">Home</a></li>
+            <li><a href="http://127.0.0.1:8000/safaripackages">Safaripackages</a></li>
+            <h6>...</h6>
+          </ol>
+        </div>
+      </div>
+    </section>
+<!-- End Breadcrumbs -->  
+<hr style="width:100px; transform:rotate(90deg);">
+
+
+<!-- Post Body -->
+<div class="container-fluid">   
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-md-6">
+    <article>
+      <p> {{ safaripackage.brief_description }} </p>
+    </article> 
+  </div>  
+</div>
+
+<div class="container-fluid">
+  <div class="row text-center padding">
+    <div class="col-12">
+      <article class="display-4"> Iteneray Details </article>
+    </div>
+</div>
+<hr>
+
+{% for day in day %}
+
+<div class=" container-fluid row justify-content-center">
+  <div class="col-lg-8 col-md-6">
+
+    <div class="card-column row mb-3 shadow">
+            <img class="card-img-top img-thumbnail col-xs-4 col-md-4" src="{{ day.image.url}}" alt="Card image cap">
+            <div class="card-body col-xs-8 col-md-8">
+                <h4 class="card-title" style="font-size:200%;"> Day {{day.day_number}}</h4>
+                <article class="card-text">{{day.day_description}} </article> 
+            </div>
+      </div>
+    
+  </div>
+  
+</div>
+
+{% endfor %}
+
+<!-- ===== Button ===== -->
+
+
+<div class="container welcomecard">
+  <div class="row justify-content-center">
+    <div class="card text-white bg-secondary mb-3 w-80">
+      <div class="card-body">
+        <a href="{% url 'inquiry' %}" class="btn-lg btn-primary">Inquire About This Itienary</a>
+        <a href="#" class="btn-lg btn-primary">Customize My Iteniary</a>
+        <a href="#" class="btn-lg btn-primary">View Other Itieniaries</a>
+      </div>
+    </div>      
+  </div>
+</div>
+
+
+</header>
+<script src="{% static 'js/bootstrapjquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+</body>
+{% endblock %}
+
+
+   </html>
