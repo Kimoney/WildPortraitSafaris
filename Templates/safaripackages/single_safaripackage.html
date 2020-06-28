@@ -13,83 +13,94 @@
     <title>Packages</title>
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
-<body style=" background-image: url({% static '/img/zebraa background.jpg' %})!important; 
-  width: 100%;
+<body>
+
+<!-- CSS --> 
+<style type="text/css">
+
+html, body {
   height: 100%;
-  background-size: cover;
-  background-position: center center;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  will-change: transform;">
-    <style type="text/css">
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 20px 0 20px 0;
-  background: #f7f7f7;
-  border-bottom: 1px solid #ededed;
-  margin-bottom: 40px;
+  width: 100%;
+  font-family: sans-serif;
+  color: rgb(83, 85, 83);
+  }
+
+.card-img-overlay {
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  background-color: #212529;
+  opacity: .8;
+  color: white;
 }
 
-.breadcrumbs h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #545454;
+.card-title {
+  padding-bottom: 1rem;
 }
 
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0 0 5px 0;
-  margin: 0;
-  font-size: 14px;
+h3, h4, h5 {
+  padding-bottom: 1rem;
+  color: orange;
+  text-shadow: green;
+
 }
 
-.breadcrumbs ol li + li {
-  padding-left: 10px;
+.overview {
+  color: orange;
 }
 
-.breadcrumbs ol li + li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #6e6e6e;
-  content: "/";
-}</style>
+article{
+   padding-bottom: 1rem;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.buttons {
+  padding-bottom: 2rem;
+}
+
+.btn-primary{
+  background-color: orange;
+}
+
+@media (max-width: 768px) {
+.card-img-overlay {
+    top: 0%;
+  }
+
+
+@media (max-width: 576px) {
+ 
+.card-img-overlay {
+    top: 0%;
+  }
+
+</style>
 
 <!-- ======= SAFARI PACKAGE HEADING ======= -->
 <header>
 
 <div class="card bg-dark text-white">
   <img class="card-img" src="{{safaripackage.image.url}}" height="500" width="auto" alt="Card image">
-  <div class="card-img-overlay text-center" style="position:absolute;top:0;left:0;height:100%;width:100%;background-color:#212529;opacity:.5;">
+  <div class="card-img-overlay text-center">
     <h3 class="card-title display-4">{{ safaripackage.title }}</h3>
-    <h4 class="card-text display-10">
-      <h4> From {{safaripackage.exodus}} To {{safaripackage.destination}} <br/> For {{safaripackage.days}} Days and {{safaripackage.nights}} Nights</h4>
-        <h5> At {{safaripackage.cost}} Per Person</h5>
-    </h4>
-    <p> {{safaripackage.overview}} </p>
+    <article class="card-text ">
+        <h4> From {{safaripackage.exodus}} To {{safaripackage.destination}} <h4/> 
+        <h4> For {{safaripackage.days|floatformat}} Days and {{safaripackage.nights|floatformat}} Nights</h4>
+        <h5> At {{safaripackage.cost|floatformat}} Per Person</h5>
+    </article>
+    <article class="overview"> {{safaripackage.overview}} </article>
   </div>
 </div>
 
 </header>
 <!-- ======= SAFARI PACKAGE HEADING ======= -->
-
-<!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-        <div class="row-justify-centre">
-          <ol>
-            <li><a href="http://127.0.0.1:8000/">Home</a></li>
-            <li><a href="http://127.0.0.1:8000/safaripackages">Safaripackages</a></li>
-            <h6>...</h6>
-          </ol>
-        </div>
-      </div>
-    </section>
-<!-- End Breadcrumbs -->  
-<hr style="width:100px; transform:rotate(90deg);">
+  
+<hr>
 
 
 <!-- Post Body -->
@@ -136,9 +147,9 @@
   <div class="row justify-content-center">
     <div class="card text-white bg-secondary mb-3 w-80">
       <div class="card-body">
-        <a href="{% url 'inquiry' %}" class="btn-lg btn-primary">Inquire About This Itienary</a>
-        <a href="#" class="btn-lg btn-primary">Customize My Iteniary</a>
-        <a href="#" class="btn-lg btn-primary">View Other Itieniaries</a>
+        <div class="row justify-content-center buttons"> <a href="{% url 'inquiry' %}" class="col-xs-4 btn-lg btn-primary">Inquire About This Itienary</a> </div>
+        <div class="row justify-content-center buttons"> <a href="" class="col-xs-4 btn-lg btn-primary">Customize My Iteniary</a> </div>
+        <div class="row justify-content-center buttons"> <a href="{% url 'safaripackages_view' %}" class="col-xs-4 btn-lg btn-primary">View Other Itieniaries</a> </div>
       </div>
     </div>      
   </div>

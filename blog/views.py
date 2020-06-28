@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from .models import Blog
+from .models import Blog, Category
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def blog(request):
 	all_blogs = Blog.objects.all()
+	all_categories = Category.objects.all()
 
 #Paginator
 
@@ -19,7 +20,8 @@ def blog(request):
 		all_blogs = paginator.page(paginator.num_pages)
 
 	context = {
-	'all_blogs': all_blogs
+	'all_blogs': all_blogs,
+	'all_categories': all_categories
 	}
 	return render (request, './blog/blog.html', context)
 

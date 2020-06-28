@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block 'content' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,30 +13,89 @@
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
 <body>
-    {% block 'content' %}
+    
+<style type="text/css">
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  color: rgb(83, 85, 83);
+  }
+
+.carousel-inner img {
+  height: 70% !important;
+  width: 100% !important;
+}
+.carousel-caption {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption h4 {
+  font-size: 300%;
+  font-weight: 200;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 10px black;
+  padding-bottom: 1rem;
+  color: orange; 
+}
+#slides  {
+  padding-bottom: 2rem;
+
+}
+
+@media (max-width: 768px) {
+.carousel-caption {
+    top: 45%;
+  }
+.carousel-caption h4 {
+  font-size: 350%;
+  }
+
+.display-4 {
+  font-size: 200%;
+  }
+
+}
+@media (max-width: 576px) {
+ 
+.carousel-caption {
+    top: 40%;
+  }
+.carousel-caption h4 {
+    font-size: 250%;
+  }
+.display-4 {
+  font-size: 160%;
+}
+
+</style>
+
 <header class="header">
 
 <!-- ======= Blog HEADING ======= -->
-
 <div id="slides" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
           <img src="{% static '/img/blog.jpg' %}" height="420" width="100%">
           <div class="carousel-caption">
-            <h1 class="display-4" style="font-style: italic; color: orange; font-family: cursive;">Experiences and tips to make your safari even more unique</h1>
+            <h4 class="display-4">Travel tips and experiences</h4>
           </div>
       </div>
     </div>
-</div><!-- ======= Blog HEADING ENDING ======= -->
+</div>
+<!-- ======= Blog HEADING ENDING ======= -->
 
 </header>
     
-    <div class="container-fluid" >
+    <div class="container-fluid row" >
     
 <!-- Blog Section -->
-           {% for blog in all_blogs %}
 
     <section class="col-md-8 col-xs-8">
+      {% for blog in all_blogs %}
         <a href="{% url 'single_blog' blog.pk %}">
         <div class="card-column row mb-3 shadow">
             <img class="card-img-top col-xs-4 col-md-4" src="{{ blog.image.url}}" height="auto" width="auto" alt="Card image cap">
@@ -48,16 +107,26 @@
             </div>
         </div>
         </a>
-        
-    </section>
+{% endfor %}      
+  </section>
 
     <!-- Tags & Category Columns -->
-    <section class="col-md-4">
-        
-    </section>
+<section class="col-md-4">
+  
+  <div class="row text-center shadow">
+      <h4 class="aside-heading mt-4 text-center"> Categories</h4>        
+  </div>
+  <div class="text-center">
+    <ul class="list-group">
+{% for category in all_categories %}
+      <a href=""><li class="list-group-item">{{ category.title }}</li></a>
+{% endfor %}
+    </ul>  
+  </div>
+      
+</section>
     
 </div>
-{% endfor %}
 
 <hr>    
 <!-- PAGINATION -->

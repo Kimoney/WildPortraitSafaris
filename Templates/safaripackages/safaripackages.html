@@ -17,156 +17,150 @@
 
   {% block 'content' %}
 <style type="text/css">
-  .ca25rd-body {
-  font-size: 150%;
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  color: rgb(83, 85, 83);
+  }
+
+.carousel-inner img {
+  height: 70% !important;
+  width: 100% !important;
+}
+.carousel-caption {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption h4 {
+  font-size: 300%;
   font-weight: 200;
   text-transform: capitalize;
-  text-shadow: 1px 1px 10px cyan;
+  text-shadow: 1px 1px 10px black;
   padding-bottom: 1rem;
-  color: green;
-  background-color: transparent;
-    position: absolute;
-  top: 5%;
-  transform: translateY(50%);
-}
-/*--------------------------------------------------------------
-        ======     =====     Breadcrumbs     =====     =====   
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 20px 0 20px 0;
+  color: orange; 
 }
 
-.breadcrumbs h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #545454;
-}
-
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0 0 5px 0;
-  margin: 0;
-  font-size: 14px;
-}
-
-.breadcrumbs ol li + li {
-  padding-left: 10px;
-}
-
-.breadcrumbs ol li + li::before {
+.blog-post {
   display: inline-block;
-  padding-right: 10px;
-  color: #6e6e6e;
-  content: "/";
+  text-align: left;
 }
 
-footer {
-  background-image: url('img/zebra background.jpg');
-  color: #d5d5d5 !important;
-  padding-top: 2rem; 
-}
-hr.light {
-  border-top: 1px solid #d4d4d4;
-  width: 50%;
-  margin-top: .8rem;
-  margin-bottom: 1rem;
-}
-footer a {
-  color: #d4d4d4;
-}
-hr.light100 {
-  border-top: 1px solid #d4d4d4;
-  width: 100%;
-  margin-top: .8rem;
-  margin-bottom: 1rem;
+.maincont{
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
+.safaricard {
+  width: 22rem;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+}
+
+article {
+  line-height: 2rem;
+  font-size: 100%;
+}
+
+.display-6 {
+  background-color: orange;
+  border: 3px green;
+  opacity: 0.6;
+  color:black;
+}
+
+.fa-calendar-alt, .fa-dollar-sign {
+  color: orange;
+}
+
+.btn-primary {
+  background-color: orange;
+  border: orange;
+  color: black;
+}
+
+aside {
+  padding:22px;
+  display: inline-block;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+.carousel-caption {
+    top: 45%;
+  }
+.carousel-caption h4 {
+  font-size: 350%;
+  }
+
+.display-4 {
+  font-size: 200%;
+  }
+
+}
+@media (max-width: 576px) {
+ 
+.carousel-caption {
+    top: 40%;
+  }
+.carousel-caption h4 {
+    font-size: 250%;
+  }
+.display-4 {
+  font-size: 160%;
+}
 </style>
 
 <!-- ===== SAFARI PACKAGE HEADING ===== -->
-<section class="blog-heading mb-3">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-12">
-
-
-          <img class="img-fluid shadow"  src="{% static '/img/safaripackages.jpg' %}">
+<div id="slides" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="{% static '/img/safaripackages.jpg' %}" height="420" width="100%">
           <div class="carousel-caption">
-            <h2 class="display-2">Deals To Exotic Places</h2>
-            <h3> Your travel across East Africa with professional partners</h3>
-          <!--  <button type="button" class="btn btn-outline-light btn-lg"> View Safari Packages</button> -->
-            
-
-          
-
-          
-          
-           <!-- <img class="img-fluid shadow" src="{% static '/img/big boys play.jpg' %}" height="400" width="100%">
-            
-            <div class="carousel-caption">
-              <a href=" {% url 'safaripackages_view' %} "></a><h1 class="display-2">Safari Packages</h1>
-              <h3> View our safari packages, or contact us for a tailor-made iteniary  </h3> -->
-
-<!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs mb-3">
-      <div class="container">
-        <div class="row-justify-centre">
-          <ol>
-            <li><a href="http://127.0.0.1:8000/">Home</a></li>
-          </ol>
-        </div>
-      </div>
-    </section>
-<!-- End Breadcrumbs -->  
-
-            </div>
-
+            <h4 class="display-4">Amazing deals to exotic places</h4>
           </div>
-          
-
-        </div>
-
-      
+      </div>
     </div>
+</div>
 
-</section> <!-- SAFARI PACKAGE HEADING ENDING -->
+<!-- ======= SAFARI PACKAGE HEADING ENDING ======= -->
 
 
 <!-- SAFARI PACKAGE BODY -->
- 
-
 <section>
-  <div class=" container-fluid row mb-0">
-
-    <!-- <aside class="col-lg-3 col-md-3">
-      
-    </aside> -->
-    
+<div class=" container-fluid row mb-0">    
     <div class="col-md-9 col-xs-6 mb-3 shadow">
-          {% for safaripackage in all_safaripackages %}
-      <article class="blog-post mb-3" style="display: inline-block; text-align: center;">
-      
 
+{% for safaripackage in all_safaripackages %}
 
-        <div class="row" style="padding-right: 1.8rem;">
-
-      <div class="card-column mt-4" style="width: 16rem;">
+<article class="blog-post mb-3 justify-content-center">
+    <div class="maincont container-fluid row">
+<div class="col-md-3"> <!-- column -->
+      <div id="card" class="safaricard card-column mt-4 shadow">
       <div class="carousel">
-        <img src="{{ MEDIA_URL}} {{ safaripackage.image.url }}" class="card-img-top img-thumbnail" style="max-width:100%; height:auto;" alt="">
-        <div class="carousel-caption" style="">
-        <h5 class="display-6" style="background-color: orange; border: 3px green; opacity: 0.6; color:black;"> {{ safaripackage.title|title }} </h5>
+        <img src="{{ MEDIA_URL}} {{ safaripackage.image.url }}" class="card-img-top" alt="safaripackage">
+        <div class="carousel-caption">
+        <h5 class="display-6"> {{ safaripackage.title|title }} </h5>
         </div>
-        </div>
+      </div>
+      
       <div class="card-body">
-          <p><i class="far fa-calendar-alt"></i> {{ safaripackage.days|floatformat }} Days and {{ safaripackage.nights|floatformat }} Nights</p>
-          <p><i class="fas fa-dollar-sign"></i> {{ safaripackage.cost|floatformat }} Per Person </p>
-          <hr class="my-4">
-          <p class="card-text">{{ safaripackage.telegram }}</p>
+          <article><i class="far fa-calendar-alt"></i> {{ safaripackage.days|floatformat }} Days and {{ safaripackage.nights|floatformat }} Nights</article>
+          <article><i class="fas fa-dollar-sign"></i> {{ safaripackage.cost|floatformat }} Per Person </article>
+          
+          <article class="card-text">{{ safaripackage.overview }}</article>
           <a href="{% url 'single_safaripackage' safaripackage.pk %}" class="btn btn-primary">View Details</a>
       </div>
-</div>  
+    </div>  
+  
+
+</div> <!-- column -->
   </div>
       
   </article>
@@ -180,80 +174,24 @@ hr.light100 {
 
 
 
-    <aside class="col-lg-3 col-md-3" style="padding:22px; display: inline-block; text-align: center;">
-              <div class="row text-center shadow">
-        <h4 class=" aside-heading mt-4 text-center"> Categories</h4>        
+    <aside class="col-lg-3 col-md-3">
+      <div class="row text-center shadow">
+        <h4 class="aside-heading mt-4 text-center"> Categories</h4>        
       </div>
       <div class="row-justify-centre">
         <ul class="list-group">
-            <a href=""><li class="list-group-item">Photography Safaris</li></a>
-            <a href=""><li class="list-group-item">Bird Watching </li></a>
-            <a href=""><li class="list-group-item">Maasai Mara Migration</li></a>
-            <a href=""><li class="list-group-item">Family Safaris</li></a>
-            <a href=""><li class="list-group-item">Camping Safari</li></a>
-            <a href=""><li class="list-group-item">Maasai Mara Migration</li></a>
-            <a href=""><li class="list-group-item">Family Safaris</li></a>
-            <a href=""><li class="list-group-item">Camping Safari</li></a>
+{% for category in all_categories %}
+            <a href=""><li class="list-group-item">{{ category.title }}</li></a>
+{% endfor %}
         </ul>
         
       </div>
       <div class="row">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/l__qbQkAET0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
-      </div>
-        <div class="row text-center shadow">
-        <!-- ==== SOCIALS ==== -->
-            <div class="col-sm-4">
-              <a class="social-link py-4 w-100" href="#">
-                <i class="fab fa-facebook"></i>
-              </a>          
-            </div>
-            <div class="col-sm-4">
-              <a class="social-link py-4 w-100" href="#">
-                <i class="fab fa-twitter"></i>
-              </a>          
-            </div>
-            <div class="col-sm-4">
-              <a class="social-link py-4 w-100" href="#">
-                <i class="fab fa-instagram"></i>
-              </a>          
-            </div>
-        
-      <h4 class="aside-heading mt-4"><i class="far fa-bookmark"></i> Best Selling Safaris </h4>
-      
-      <article class="row mb-2">
-            <div class="col-sm-3">
-                <img class="img-fluid rounded" src="{% static '/img/jay.jpg' %}" alt="">
-              
-            </div>
-            <div class="col-sm-9">
-              <h5 class="my-4"> Maasai Mara End Rtrvc</h5>
-              <p class="m-8"> I have the following template, which produces a form with vertical data entry fields. Please guide me to achieve 'horizontal' data entry fie </p>
-              <a href="" class="btn btn-outline-secondary"> View Details </a>
-
-            </div>
-            
-
-            <div class="col-sm-3">
-                <img class="img-fluid rounded" src="{% static '/img/jay.jpg' %}" alt="">
-              
-            </div>
-            
-            <div class="col-sm-9"><a href="" class="">
-              <h5 class="m-4"> Maasai Mara End Rtrvc</h5>
-              <p class="m-8"> I have the following template, which produces a form with vertical data entry fields. Please guide me to achieve 'horizontal' data entry fie </p></a>
-
-
-            </div>
-            
-          </article>
-          
-        </div>
-        
+      </div>        
       </aside>
       
-
-
   </div>
 </section>
 

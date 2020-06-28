@@ -103,7 +103,7 @@
     </div>
     <hr>
   <div class=" container-fluid row text-center">
-    {% for safaripackage in all_safaripackages %}
+{% for safaripackage in all_safaripackages %}
       <div class="col-md-3">
         <div class="card mb-2 shadow">
           <img class="card-img-top"
@@ -119,9 +119,7 @@
         </div>
         </div>
       </div>
-
-{% endfor %}
-  
+{% endfor %}  
   </div>
 
   <div class=" container text-center">
@@ -308,10 +306,21 @@
                 Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
               </p>
               <div class="social">
-                <a href=""><i class="icofont-twitter"></i></a>
-                <a href=""><i class="icofont-facebook"></i></a>
-                <a href=""><i class="icofont-instagram"></i></a>
-                <a href=""><i class="icofont-linkedin"></i></a>
+                <div class="col-sm-4">
+              <a class="social-link py-4 w-100" href="#">
+                <i class="fab fa-facebook"></i>
+              </a>          
+            </div>
+            <div class="col-sm-4">
+              <a class="social-link py-4 w-100" href="#">
+                <i class="fab fa-twitter"></i>
+              </a>          
+            </div>
+            <div class="col-sm-4">
+              <a class="social-link py-4 w-100" href="#">
+                <i class="fab fa-instagram"></i>
+              </a>          
+            </div>
               </div>
         </div>
     </div>

@@ -1,18 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import SafariPackages, DayNumber
+from .models import SafariPackages, DayNumber, Category
 
 # Create your views here.
-def safaripackages_view(request, *args,**kwargs):
-	print (args, kwargs)
-	print (request.user)
-
+def safaripackages_view(request):
 	all_safaripackages = SafariPackages.objects.all()
+	all_categories = Category.objects.all()
 
 #Paginator
 
-	paginator = Paginator(all_safaripackages, 9)	
+	paginator = Paginator(all_safaripackages, 12)	
 	page = request.GET.get('page')		
 	try:
 		all_safaripackages = paginator.page(page)
@@ -24,6 +22,7 @@ def safaripackages_view(request, *args,**kwargs):
 
 	context = {
 	'all_safaripackages': all_safaripackages,
+	'all_categories':all_categories
 	}
 
 

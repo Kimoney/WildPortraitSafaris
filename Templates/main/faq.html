@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block 'content' %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -12,9 +12,55 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>FAQ</title>
+    <title>FAQ | Wild Portrait Safaris</title>
   </head>
-  <body>
+  
+<!--===== CSS =====-->
+<style type="text/css">
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  color: rgb(83, 85, 83);
+  }
+
+.carousel-inner img {
+  height: 70% !important;
+  width: 100% !important;
+}
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption h4 {
+  font-size: 300%;
+  font-weight: 200;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 10px black;
+  padding-bottom: 1rem;
+  color: orange; 
+}
+.accordion {
+  padding-bottom: 2em;
+  }   
+
+.btn {
+  color: orange; 
+}
+.card-header {
+  background-color: black;
+}
+.card-body {
+  padding: 2em;
+  line-height: 2.5rem;
+}
+
+</style>
+
+<body>
 
 <!-- ======= FAQ HEADING ======= -->
 
@@ -23,7 +69,7 @@
       <div class="carousel-item active">
           <img src="{% static '/img/faq.jpg' %}" height="420" width="100%">
           <div class="carousel-caption">
-            <h4 class="display-4" style="font-style: italic; color: orange; font-family: cursive;">What most of our clients ask about us</h4>
+            <h4 class="display-4" >What most of our clients ask </h4>
           </div>
       </div>
     </div>
@@ -31,56 +77,498 @@
 <hr>
 
 <div class="container">
-  <div class="row justify-content-center">
+<div class="row justify-content-center">
+
 <!-- ===== FAQ's ===== -->
-    <section class="col-lg-10">
-    <div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          How Much Does It Cost To Go On A Safari
-        </button>
-      </h2>
-    </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
+<section class="col-lg-10">    
+<div class="accordion" id="accordionExample">
+  
+  <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          1.) How Much Does It Cost To Go On A Safari
+          </button>
+        </h2>
+      </div>
+      
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
         Most of the Kenya safaris and African holidays we organize for our clients are 100 percent customized to their individual interests, timeframe and budget. The rates for the destinations we offer cover a wide range and typically vary significantly from the “high season” to the “low season”. We encourage you to contact us for a quotation; we are here to assist you in planning an amazing African holiday. We really are passionate about what we do and we welcome all enquires.
+        </div>
       </div>
-    </div>
   </div>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Collapsible Group Item #2
-        </button>
-      </h2>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible Group Item #3
-        </button>
-      </h2>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-</div>
 
-    </section>
+
+  <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          2.) What Is The Best Time To Travel?
+          </button>
+        </h2>
+      </div>    
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+        All Kenya parks have great sightings all year round, although June to September is the best time to visit Masai Mara in Kenya because of the wildebeest migration. Bottom line is that all year round there is plenty of wildlife to see and great birding activities.
+        </div>
+      </div>
+  </div>
+  
+  <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          3.) Would You Advice Taking A Family To Kenya?
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+        Kenya is a great destinations for families. We operate great family trips and also some of the lodges have arrangements to cater for young ones through children clubs that you can engages them a lot with games and nature activities. Many of the lodges and tented camps have swimming pools that the kids can enjoy.
+        </div>
+      </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-header" id="headingFour">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          4.) Do I Require A Visa To Enter Kenya?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+      <div class="card-body">
+        You require a valid passport that is normally valid for 6 months beyond the intended length of stay. Visa for Kenya and Tanzania costs US$50 respectively. Arrange to have your visa in advance but it can also be received on arrival at the airport. You could also contact the nearest consulate office for latest visa requirements. It is advisable to check with the consulate of the country that you intend to visit as requirements can change without notice.
+      </div>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="card-header" id="headingFive">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          5.) What Kind Of Accomodation Do We Use?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+      <div class="card-body">
+        This depends on personal taste and varies from Luxury safari lodges/tented camps, hotels, bed & breakfast and camp sites. Whatever your choice, advance booking is recommended.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingSix">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          6.) How Far In Advance Should I Book My Safari
+        </button>
+      </h2>
+    </div>
+    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+      <div class="card-body">
+        We encourage you to plan your African safari as far in advance as possible; several months at a minimum to ensure a better selection of camp availability. It is highly recommended to make arrangements for your safari in advance as far as possible. 4-6 months is most convenient and assures you availability especially during the months of the high season, July-mid September, Christmas-new year. This saves last minute searches which often find you compromising standards and with no guarantee of availability.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingSeven">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+          7.) What Are The Road Conditions Like In Kenya
+        </button>
+      </h2>
+    </div>
+    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+      <div class="card-body">
+        All the major roads are tarred. Not all of them are in good condition but they are all accessible. In the National reserves the roads are earthen.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingEight">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+          8.) What Is The Time Difference In Kenya?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+      <div class="card-body">
+        Kenya is three hours ahead of the Greenwich Mean Time (GMT +3).
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingNine">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseFour">
+          9.) What Is The Official Language In Kenya?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+      <div class="card-body">
+        English is widely spoken in East Africa. In the tour industry some of the guides also have added languages learnt in the local institutes. These are colleges put up to help cater for the wide safari industry.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingTen">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+          10.) What About Food And Water?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+      <div class="card-body">
+        Any special dietary requirement can be catered for.  Your day normally starts with tea and biscuits before your morning activity. Returning to your lodge or camp late morning, brunch is enjoyed – cereals, fruit, bacon, eggs, sausage, and toast. Buffet lunches are typical with a warm dish such as stew served with salads, quiches and cold meats. Dinner consists of an appetizer followed by meat, fish and pasta dishes served with assorted vegetables and sauces. Dinner is followed by coffee (or tea), cheeses, and desserts.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingEleven">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+          11.) Are Ther Any Medical Precautions?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample">
+      <div class="card-body">
+        Travellers to Africa should start with long term basic health protection. This means vaccinations against Tetanus, Typhoid, Yellow fever and Hepatitis A. It is mandatory for Kenya and Tanzania visitors be vaccinated for Yellow fever. You have to prove this so bring your inoculation card and it will be checked at the airport. Africa has some parts with Malaria. It advisable that you consult your doctor for information on Malaria prevention preparation and most updated information on health to the third world.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingTwelve">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+          12.) What Photography Advice Can You Give?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordionExample">
+      <div class="card-body">
+        Souvenir photos can be taken. This requires some patience and excellent timing. The regular family camera is usually not enough for wildlife that is far. A camera with a 200-300 mm comes handy in this case. Dedicated photographers can use telephoto lens of 400-500 mm. If you have big lens bring with a light tripod stand for stability and a teleconverter (2 x) to help double the focal length. Bring with you ample films and batteries. These can also be bought in the lodges or tourist centers. At the moment of writing this page it is forbidden to photograph government institutions, military personnel (police, army, border police) Some cultures eg, Masai are very sensitive so be careful when you photograph and to consult the guide on the various circumstances.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingThirteen">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+          13.) Will I Be Able To Recharge My Camera's Batteries?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThirteen" class="collapse" aria-labelledby="headingThirteen" data-parent="#accordionExample">
+      <div class="card-body">
+        If a camp or lodge is connected to electricity mains or has a generator you may be able to recharge your video batteries. Many camps and lodges have the correct adapter plugs however we recommend that you bring your own plug and converter. One of the best options for recharging video batteries is an adapter allowing you to recharge from a vehicle battery.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingFourteen">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+          14.) Is Ther Electricity In The Safari Lodges and Camps?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseFourteen" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordionExample">
+      <div class="card-body">
+        Electricity in Kenya is 220/240 volts. Most safari lodges and camps are not connected to an electrical supply. Solar lighting (backed up by batteries) is common, with many lodges having a generator which runs part of the day (morning and late evening). Lanterns also provide light at night. In most areas you will not be able to use a hairdryer or electric shaver.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingFifteen">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+          15.) What Type Of Baggage/Luggage Should I Take?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseFifteen" class="collapse" aria-labelledby="headingFifteen" data-parent="#accordionExample">
+      <div class="card-body">
+        Luggage should be kept to a minimum – 12 kg’s / 26 pounds per person packed in a soft duffel bag (15 kg’s per person on Exclusive Series safaris). Hard sided suitcases and soft-sided internal frame carry on luggage are not acceptable as they will not fit in the baggage compartment on small aircraft which are often used for transfers between lodges and camps. On safaris that have no small aircraft transfers the weight and size allowance is not as important however you should still strive to bring as little as possible. Remember – Laundry service is offered at most safari camps and lodges at an extra cost unless otherwise stated.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingSixteen">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+          16.) Do I Need Travel Insurance
+        </button>
+      </h2>
+    </div>
+    <div id="collapseSixteen" class="collapse" aria-labelledby="headingSixteen" data-parent="#accordionExample">
+      <div class="card-body">
+        It is always advisable to have travel insurance while visiting Africa just like any other parts of the world. An element of personal risk that is of hazardous nature is involved in all the expeditions. Members in such an expedition must accept this risk. You are advised to take out an Insurance policy to cover personal accidents and medical expenses. This can be arranged on request.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingSeventeen">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+          17.) What Airlines Fly To Kenya?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseSeventeen" class="collapse" aria-labelledby="headingSeventeen" data-parent="#accordionExample">
+      <div class="card-body">
+        Most of the major world airlines such as Ethiopia Airline, KLM, British Airways, South African Airways, and Swissair and Kenya Airways fly into East Africa several times a week.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingEighteen">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseEighteen" aria-expanded="false" aria-controls="collapseEighteen">
+          18.) What Is A Lodge Safari?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseEighteen" class="collapse" aria-labelledby="headingEighteen" data-parent="#accordionExample">
+      <div class="card-body">
+        On a lodge safari you travel from lodge to lodge and do game drives with one of our driver/guides. The lodges we use are essentially hotels in the bush. They accommodate between 100 and 200 people. They provide most of the amenities found in a hotel (e.g., restaurant, lounge, swimming pool, etc.). This is a good choice when traveling with children or if you want certain creature comforts when you return from game viewing. 
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingNineteen">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseNineteen" aria-expanded="false" aria-controls="collapseNineteen">
+          19.) What Is A Permanent Tented Camp Safari?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseNineteen" class="collapse" aria-labelledby="headingNineteen" data-parent="#accordionExample">
+      <div class="card-body">
+        A Permanent tented camp safaris are done by vehicle. In the case of a fly-in safari you will fly from one reserve to the next. This reduces the amount of travel time considerably and maximizes game viewing opportunities. Permanent tented camps provide accommodation ranging from comfortable to luxurious. Most consist of large walk-in tents on elevated wooden platforms, with beds, chairs, furniture and an en-suite bathroom with hot and cold water and flushing toilets. Permanent camps accommodate a smaller size group (20-30 people) than lodges allowing a more personal interaction with the natural habitat.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingTwenty">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwenty" aria-expanded="false" aria-controls="collapseTwenty">
+          20.) What Is A Mobile Camping Safari?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwenty" class="collapse" aria-labelledby="headingTwenty" data-parent="#accordionExample">
+      <div class="card-body">
+        In a mobile-tented safari the camp moves each day while you are game viewing. Usually the relocation is combined with one or two nights at a safari lodge before going back into the camp at a new location. This type of accommodation obviously does not have the amenities of either lodges or permanent tented camps but the level of comfort and staff attention is unsurpassed. The camps consist of sleeping, dining, kitchen and staff tents with toilet and hot water shower annexes. The sleeping tents are large walk-in tents completely insect proof, with a high outer fly and small shaded veranda. They are furnished with comfortable beds, bedside table and chairs. The camp cook prepares meals on open charcoal fires.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="heading21">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse21" aria-expanded="false" aria-controls="collapse21">
+          21.) What Is A Serviced Camping Safari?
+        </button>
+      </h2>
+    </div>
+    <div id="collapse21" class="collapse" aria-labelledby="heading21" data-parent="#accordionExample">
+      <div class="card-body">
+        A serviced camping safari features exclusive wilderness campsites, comfortable 3X3 meter dome tents with GI beds, bedrolls with crisp linen, bedside tables with reading lamps, towels, mats and hot water bottles for the winter months. There is a shared bathing enclosure with flushing toilet, hot shower, hand basin and a luxury range of shampoos and conditioners. Guest areas include a bush dining area, bar, small wildlife library and board games. The staff erects and dismantles camp, prepare excellent meals of fresh produce and take care of all camp chores. All luggage and camp equipment is transported on a support vehicle.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="heading22">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse22" aria-expanded="false" aria-controls="collapse22">
+          22.) How Many People Do You Take On A Safari?
+        </button>
+      </h2>
+    </div>
+    <div id="collapse22" class="collapse" aria-labelledby="heading22" data-parent="#accordionExample">
+      <div class="card-body">
+        Most of our safaris have guaranteed departures with a minimum of two people and are limited to a maximum of 14 people (if more than 7 people are on a safari, we use two vehicles). Each person is assured a window seat. A few of the participation camping safaris require a minimum of 4 people and allow a maximum of 12 people.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="heading23">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse23" aria-expanded="false" aria-controls="collapse23">
+          23.) What Is A Single Supplement?
+        </button>
+      </h2>
+    </div>
+    <div id="collapse23" class="collapse" aria-labelledby="heading23" data-parent="#accordionExample">
+      <div class="card-body">
+        A single supplement is a fee imposed by hotels, lodges and camps on single travelers. Tour prices are quoted based on two people sharing accommodation. If someone takes a room by themselves they have to pay the per-person price plus the single supplement fee.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="heading24">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse24" aria-expanded="false" aria-controls="collapse24">
+          24.) Can A Single Traveller Share Accomodation With Another Single Traveller?
+        </button>
+      </h2>
+    </div>
+    <div id="collapse24" class="collapse" aria-labelledby="heading24" data-parent="#accordionExample">
+      <div class="card-body">
+        Yes, providing there is another single traveler of the same sex, on the same safari, and the other person agrees to the proposed arrangement.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="heading25">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse25" aria-expanded="false" aria-controls="collapse25">
+          25.) What Type Of Vehicles Do You Use On A Safari?
+        </button>
+      </h2>
+    </div>
+    <div id="collapse25" class="collapse" aria-labelledby="heading25" data-parent="#accordionExample">
+      <div class="card-body">
+        Wild Portraits Safaris uses four wheel mini buses and landcruisers  with a pop up roof for game viewing. The type of vehicle depends on the type of safari and your budget. All vehicles are equipped with two-way radios and are maintained to provide the maximum level of comfort and safety.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="heading26">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse26" aria-expanded="false" aria-controls="collapse26">
+          26.) Is Tipping Recommended?
+        </button>
+      </h2>
+    </div>
+    <div id="collapse26" class="collapse" aria-labelledby="heading26" data-parent="#accordionExample">
+      <div class="card-body">
+        Tipping at restaurants (at your discretion) is 10%. Tipping on safaris, at lodges and camps is always welcomed but the amount varies greatly. It is often best to tip the drivers, guides and lodge manager who will distribute your tip amongst the lodge or camp staff. As a rough estimate you can tip US $10 to US $15 for each traveler per day at each lodge / camp.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="heading27">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse27" aria-expanded="false" aria-controls="collapse27">
+          27.) How Much Money Should I Bring?
+        </button>
+      </h2>
+    </div>
+    <div id="collapse27" class="collapse" aria-labelledby="heading27" data-parent="#accordionExample">
+      <div class="card-body">
+        You will need very little spending money on most safaris as the majority of meals and activities are included in your package cost. You will need to pay for lunch, dinner, and drinks when you are staying at town hotels on a bed and breakfast basis as is the case at most city hotels. Bills may be settled by US cash, by travellers check, or by credit card (accepted at most lodges, camps, hotels).
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="heading28">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse28" aria-expanded="false" aria-controls="collapse28">
+          28.) Cash Or Travellers Cheques?
+        </button>
+      </h2>
+    </div>
+    <div id="collapse28" class="collapse" aria-labelledby="heading28" data-parent="#accordionExample">
+      <div class="card-body">
+        Credit cards may be used in large towns at restaurants and shops with MasterCard and Visa being most accepted. However, use may be restricted in small towns and country areas and non-existent in small retail shops.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="heading29">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse29" aria-expanded="false" aria-controls="collapse29">
+          29.) Are Credit Cards Accepted?
+        </button>
+      </h2>
+    </div>
+    <div id="collapse29" class="collapse" aria-labelledby="heading29" data-parent="#accordionExample">
+      <div class="card-body">
+        Automatic Teller Machines (ATM’s) are situated outside most banks in towns and cities in Kenya. International credit cards can be used to withdraw currency. However, due to unpredictability,  do not rely entirely on ATMs for your currency needs.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="heading30">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse30" aria-expanded="false" aria-controls="collapse30">
+          30.) Should We Purchase Local Currency?
+        </button>
+      </h2>
+    </div>
+    <div id="collapse30" class="collapse" aria-labelledby="heading30" data-parent="#accordionExample">
+      <div class="card-body">
+        US cash or travelers checks may changed into local currency at airports and banks. Small bills (US $1, US $5, US $10, and US $20) are best. Always keep your receipt so that when you depart you may change your money back to US dollars.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="heading31">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse31" aria-expanded="false" aria-controls="collapse31">
+          31.) What Is There To Buy In East Africa?
+        </button>
+      </h2>
+    </div>
+    <div id="collapse31" class="collapse" aria-labelledby="heading31" data-parent="#accordionExample">
+      <div class="card-body">
+        Shopping while on safari is limited. Often lodges and camps have small curio shops where you can buy postcards, local goods such as carvings or books, clothing (hats, shirts), and film. At airports and in larger towns you will find African curio markets where you can by all sorts of carvings, masks, drums, jewelry etc…in general souvenirs and curios are inexpensive (in US dollar terms) – still, fun spirited bartering is the norm.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="heading32">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse32" aria-expanded="false" aria-controls="collapse32">
+          32.) Have A Question Not Addressed Here?
+        </button>
+      </h2>
+    </div>
+    <div id="collapse32" class="collapse" aria-labelledby="heading32" data-parent="#accordionExample">
+      <div class="card-body">
+        Do not hesitate to <a href="{% url 'contact_us' %}"> contact us </a> in case of more questions or clarification. Our team of experienced Safari professionals will not only be pleased to answer any question you may have but will also be delighted to make the individual travel arrangements necessary for the African Safari you want.
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+</section>
 
 
   </div> 
