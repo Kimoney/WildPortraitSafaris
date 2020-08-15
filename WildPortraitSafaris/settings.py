@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'mttnr1lp0x6t7a5i7@()(ifbma5_g^gth5m)kk-31_ov9lkx2+'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,8 +79,8 @@ WSGI_APPLICATION = 'WildPortraitSafaris.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'wildportraits',
-        'USER':'root',
+        'NAME': '',
+        'USER':'',
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',

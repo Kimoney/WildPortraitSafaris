@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import safaripackages
 import blog
+import datetime
+import safaripackages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
@@ -54,3 +55,6 @@ def contact_us_view(request):
 
 def faq_view(request):
 	return render (request, "./main/faq.html")
+
+def footer_view (request):
+	return render (request, "/footer.html")
