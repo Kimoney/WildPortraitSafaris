@@ -101,7 +101,7 @@ html, body {
             <img class="card-img-top col-xs-4 col-md-4" src="{{ blog.image.url}}" height="auto" width="auto" alt="Card image cap">
             <div class="card-body col-xs-8 col-md-8">
                 <h4 class="card-title" style="font-size:200%;">{{blog.title}}</h4>
-                <article class="card-text">{{blog.introduction}} This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</article> <small class="blockquote-footer">By <cite title="Source Title">{{ blog.author }}</cite></small>
+                <article class="card-text">{{blog.introduction}} This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</article> <small class="blockquote-footer">By <cite title="Source Title">{{ blog.author.get_full_name }}</cite></small>
                 <article class="card-text"><small class="text-muted">Created on {{ blog.created }}</small>
                 </article>
             </div>

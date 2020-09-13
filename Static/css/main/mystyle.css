@@ -57,17 +57,8 @@ background-color: orange ;
   margin-top: .3rem;
   margin-bottom: 1rem;
 }
-.fa-code {
-  color: orangered;
-}
-.fa-bold {
-  color: purple;
-}
-.fa-desktop {
-  color: blue;
-}
 
-.fa-certificate, .fa-analytics, .fa-camera {
+.fa-award, .fa-medal, .fa-thumbs-up, .fa-user-check, .fa-user-clock, .fa-shuttle-van, .fa-file-invoice-dollar {
   font-size: 60px;
   color:  orange;
   margin: 1rem;
@@ -91,6 +82,22 @@ background-color: orange ;
 	margin-right: 0.5rem;
 	margin-left: 0.5rem;
 	margin-top: 1rem;
+}
+.fa-campground, .fa-plane-arrival, .fa-user-friends, .fa-hotel {
+  font-size: 60px;
+  margin: 1rem;
+  color: orange;
+}
+.fa-tripadvisor, .fa-facebook, .fa-twitter, .fa-instagram {
+  font-size: 40px;
+  margin: 1rem;
+  color: orange; 
+}
+
+.fa-tripadvisor:hover {
+  font-size: 40px;
+  margin: 1rem;
+  color: cyan; 
 }
 
 /*--- Bootstrap Padding Fix --*/
