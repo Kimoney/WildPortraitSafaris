@@ -7,10 +7,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/6934a84829.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" a href="{% static '/css/bootstrap.css' %}"/>
     <link rel="stylesheet" a href="{% static '/css/fonts.css' %}"/>
     <title>Packages</title>
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
 </head>
 <body>
 
@@ -141,26 +143,25 @@ aside {
 
 <article class="blog-post mb-3 justify-content-center">
     <div class="maincont container-fluid row">
-<div class="col-md-3"> <!-- column -->
-      <div id="card" class="safaricard card-column mt-4 shadow">
-      <div class="carousel">
-        <img src="{{ MEDIA_URL}} {{ safaripackage.image.url }}" class="card-img-top" alt="safaripackage">
-        <div class="carousel-caption">
-        <h5 class="display-6"> {{ safaripackage.title|title }} </h5>
+  <div class=" container-fluid row text-center">
+{% for safaripackage in all_safaripackages %}
+      <div class="col-md-6">
+        <div class="card mb-2 shadow">
+          <img class="card-img-top"
+            src="{{ MEDIA_URL}} {{ safaripackage.image.url }}"
+            alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">{{ safaripackage.title|title}}</h4>
+          <p><i class="far fa-calendar-alt"></i> {{ safaripackage.days|floatformat }} Days and {{ safaripackage.nights|floatformat }} Nights</p>
+            <p><i class="fas fa-dollar-sign"></i> {{ safaripackage.cost|floatformat }} Per Person (Estimated Cost)</p>
+            <hr class="my-4">
+            <p class="card-text">{{ safaripackage.telegram }}</p>
+            <a href="{% url 'single_safaripackage' safaripackage.pk %}" class="btn btn-primary">View Details</a>
+        </div>
         </div>
       </div>
-      
-      <div class="card-body">
-          <article><i class="far fa-calendar-alt"></i> {{ safaripackage.days|floatformat }} Days and {{ safaripackage.nights|floatformat }} Nights</article>
-          <article><i class="fas fa-dollar-sign"></i> {{ safaripackage.cost|floatformat }} Per Person </article>
-          
-          <article class="card-text">{{ safaripackage.overview }}</article>
-          <a href="{% url 'single_safaripackage' safaripackage.pk %}" class="btn btn-primary">View Details</a>
-      </div>
-    </div>  
-  
-
-</div> <!-- column -->
+{% endfor %}  
+  </div>
   </div>
       
   </article>
@@ -242,7 +243,7 @@ aside {
 <script src="{% static 'js/bootstrapjquery.js' %}"></script>
 <script src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'js/popper.js' %}"></script>
-<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://kit.fontawesome.com/6934a84829.js" crossorigin="anonymous"></script>
 {% endblock %}
 </body>
 </html>

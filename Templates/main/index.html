@@ -24,7 +24,7 @@
 <div id="slides" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-          <img src="{% static '/img/home.jpg' %}">
+          <img src="{% static '/img/home22.jpg' %}">
           <div class="carousel-caption">
             <h1 class="display-4">Wild Portrait Safaris</h1>
             <h3> Experiencing nature at it's best</h3>
@@ -113,7 +113,7 @@
         <div class="card-body">
           <h4 class="card-title">{{ safaripackage.title|title}}</h4>
           <p><i class="far fa-calendar-alt"></i> {{ safaripackage.days|floatformat }} Days and {{ safaripackage.nights|floatformat }} Nights</p>
-            <p><i class="fas fa-dollar-sign"></i> {{ safaripackage.cost|floatformat }} Per Person</p>
+            <p><i class="fas fa-dollar-sign"></i> {{ safaripackage.cost|floatformat }} Per Person (Estimated Cost)</p>
             <hr class="my-4">
             <p class="card-text">{{ safaripackage.telegram }}</p>
             <a href="{% url 'single_safaripackage' safaripackage.pk %}" class="btn btn-primary">View Details</a>
@@ -273,8 +273,8 @@
     <div class="card shadow">
         <img class="card-img-top" src="{% static '/img/Bro.jpg' %}">
         <div class="card-body">
-              <h4>Walter White</h4>
-              <span>Chief Executive Officer</span>
+              <h4>John Kimani</h4>
+              <span>Office Manager</span>
               <p>
                 Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
               </p>
@@ -301,7 +301,7 @@
 
   <div class="col-md-4 text-center">  
     <div class="card shadow">
-        <img class="card-img-top " src="{% static '/img/Bro.jpg' %}">
+        <img class="card-img-top " src="{% static '/img/bro_2.jpg' %}">
         <div class="card-body">
               <h4>James Muchina</h4>
               <span style="font-size: 25px;">Professional Tour Guide</span>
@@ -330,16 +330,16 @@
   </div>
     <div class="col-md-4 text-center">  
     <div class="card shadow">
-        <img class="card-img-top" src="{% static '/img/Bro.jpg' %}">
+        <img class="card-img-top" src="{% static '/img/ken_2.jpg' %}">
         <div class="card-body">
-              <h4>Walter White</h4>
-              <span>Chief Executive Officer</span>
+              <h4>Kenneth Igathe</h4>
+              <span style="font-size: 25px;">Professional Tour Guide</span>
               <p>
-                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                Kenneth is silver level tour guide, certfied by Kenya Professional Safari Guides Association (KPSGA). He is a vibrant, energetic and passionate tour guide. Kenneth is well versed and knowledgable about all parks within kenya, which makes him a valuable asset to your itinerary.
               </p>
               <div class="social row">
                 <div class="col-sm-4">
-                  <a class="social-link py-4 w-100" href="#">
+                  <a class="social-link py-4 w-100" href="https://www.facebook.com/kenneth.matheri.52" target="_blank">
                     <i class="fab fa-facebook"></i>
                   </a>          
                 </div>
@@ -402,97 +402,6 @@
 </div>
 <hr class="my-4">
 
-<!-- ===== Testimonials ===== -->
-
-<div class="container-fluid padding">
-<div class="row welcome text-center">
-    <div class="col-12">
-      <h1 class="display-4"> Testimonials </h1>
-    </div>
-    <hr>
-</div>
-</div>
-
-
-
-<!-- slider -->
-
-<div id="slides" class="carousel slide" data-ride="carousel">
-    <ul class="carousel-indicators">
-        <li data-target="#slides" data-slide-to="0" class="active"></li>
-        <li data-target="#slides" data-slide-to="1" ></li>
-        <li data-target="#slides" data-slide-to="2" ></li>
-    </ul>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-         
-            <div class="card" style="width: 60rem; height: 18rem;" >
-              <div class="row">
-                  <div class="col-xs-3 col-md-3">
-                    <img src="{% static '/img/jay.jpg' %}" height="120" width="120" class=" rounded-circle">        
-                      <p class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></p> 
-                  </div>
-                
-                  <div class="col-xs-9 col-md-9" style="padding: 2rem;"> 
-                    <div class="card-body">
-                      <blockquote class="blockquote mb-0">
-                        <p><i class="fa fa-quote-left" aria-hidden="true"></i> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                      </blockquote>
-                    </div>
-                  </div>
-                
-              </div>     
-            
-            </div>
-      
-
-      </div>
-      <div class="carousel-item">
-            <div class="card" style="width: 60rem; height: 18rem;" >
-              <div class="row">
-                  <div class="col-xs-3 col-md-3">
-                    <img src="{% static '/img/jay.jpg' %}" height="auto" width="auto" class=" rounded-circle">        
-                      <p class="blockquote-footer" style="padding-top: 1.5rem;">Someone famous in <cite title="Source Title">Source Title</cite></p> 
-                  </div>
-                
-                  <div class="col-xs-9 col-md-9" style="padding: 2rem;"> 
-                    <div class="card-body">
-                      <blockquote class="blockquote mb-0">
-                        <p><i class="fa fa-quote-left" aria-hidden="true"></i> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                      </blockquote>
-
-                    </div>
-                  </div>
-                
-              </div>     
-            
-            </div>
-      </div>
-      <div class="carousel-item">
-      <div class="card" style="width: 60rem; height: 18rem;" >
-              <div class="row">
-                  <div class="col-xs-3 col-md-3">
-                    <img src="{% static '/img/jay.jpg' %}" height="auto" width="auto" class=" rounded-circle">
-                    <p class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></p>        
-                  </div>
-                
-                  <div class="col-xs-9 col-md-9" style="padding: 2rem;"> 
-                    <div class="card-body">
-                      <blockquote class="blockquote mb-0">
-                        <p><i class="fa fa-quote-left" aria-hidden="true"></i> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right" aria-hidden="true"></i></p>
-                      </blockquote> 
-                    </div>
-                  </div>
-                
-              </div>     
-            
-            </div>
-      </div>
-
-    </div>
-</div>
- <!-- container main-->
-<hr>
 
 
     <!-- Optional JavaScript -->

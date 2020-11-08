@@ -55,6 +55,4 @@ def contact_us_view(request):
 
 def faq_view(request):
 	return render (request, "./main/faq.html")
-
-def footer_view (request):
-	return render (request, "/footer.html")
+	
