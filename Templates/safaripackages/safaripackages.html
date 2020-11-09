@@ -139,7 +139,7 @@ aside {
 <div class=" container-fluid row mb-0">    
     <div class="col-md-9 col-xs-6 mb-3 shadow">
 
-{% for safaripackage in all_safaripackages %}
+
 
 <article class="blog-post mb-3 justify-content-center">
     <div class="maincont container-fluid row">
@@ -153,7 +153,7 @@ aside {
         <div class="card-body">
           <h4 class="card-title">{{ safaripackage.title|title}}</h4>
           <p><i class="far fa-calendar-alt"></i> {{ safaripackage.days|floatformat }} Days and {{ safaripackage.nights|floatformat }} Nights</p>
-            <p><i class="fas fa-dollar-sign"></i> {{ safaripackage.cost|floatformat }} Per Person (Estimated Cost)</p>
+            <p><i class="fas fa-dollar-sign"></i> From {{ safaripackage.cost|floatformat }} Per Person </p>
             <hr class="my-4">
             <p class="card-text">{{ safaripackage.telegram }}</p>
             <a href="{% url 'single_safaripackage' safaripackage.pk %}" class="btn btn-primary">View Details</a>
@@ -165,7 +165,6 @@ aside {
   </div>
       
   </article>
-      {% endfor %}
       
   </div>
 

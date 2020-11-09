@@ -47,7 +47,7 @@ class SafariPackages(models.Model):
 		verbose_name_plural = 'Safari Package Entries'
 
 class DayNumber(models.Model):
-	daydetails = models.ForeignKey(SafariPackages, related_name='daydetails', default=1, on_delete=models.SET_DEFAULT)
+	daydetails = models.ForeignKey(SafariPackages, related_name='daydetails', on_delete=models.SET_DEFAULT)
 	day_number = models.CharField( max_length=10, null=True, blank=True)
 	location = models.CharField(max_length=200, default=1, null=True, blank=True)
 	image = models.ImageField (upload_to='SafariPackagesDetails/%Y/%m/%d', null=False, default=1)
