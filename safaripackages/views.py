@@ -33,6 +33,9 @@ def single_safaripackage(request, post_id):
 	day = DayNumber.objects.filter(daydetails_id = post_id)
 	return render (request, './safaripackages/single_safaripackage.html', {'safaripackage':safaripackage,'day':day})
 
-def safaripackage_categories (request):
-	safaricategory = Category.objects.all()
-	return render (request, './safaripackages/safaricategory.html', {'safaricategory':safaricategory})
+
+def safaripackage_categories (request, slug):
+	category = Category.objects.get(slug=slug)
+	all_categories = Category.objects.all()
+	context = {'category':category, 'all_categories':all_categories}
+	return render (request, './safaripackages/safaricategory.html', context)

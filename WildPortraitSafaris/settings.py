@@ -81,8 +81,8 @@ WSGI_APPLICATION = 'WildPortraitSafaris.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
-        'USER':'root',
+        'NAME': 'wildportraits',
+        'USER':'',
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
@@ -137,8 +137,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mail.wildportraitsafaris.com'
+EMAIL_HOST = ''
 EMAIL_USE_TLS = True
-EMAIL_PORT = 26
-EMAIL_HOST_USER = '@wildportraitsafaris.com'
+EMAIL_PORT = 
+EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''

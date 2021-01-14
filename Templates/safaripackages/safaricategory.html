@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/6934a84829.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" a href="{% static '/css/bootstrap.css' %}"/>
+    <link rel="stylesheet" a href="{% static '/css/fonts.css' %}"/>
+    <title>Packages</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+</head>
+<body>
+
+
+  {% block 'content' %}
+<style type="text/css">
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  color: rgb(83, 85, 83);
+  }
+
+.carousel-inner img {
+  height: 70% !important;
+  width: 100% !important;
+}
+.carousel-caption {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption h4 {
+  font-size: 300%;
+  font-weight: 200;
+  text-transform: capitalize;
+  text-shadow: 1px 1px 10px black;
+  padding-bottom: 1rem;
+  color: orange; 
+}
+
+.blog-post {
+  display: inline-block;
+  text-align: left;
+}
+
+.maincont{
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.safaricard {
+  width: 22rem;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+}
+
+article {
+  line-height: 2rem;
+  font-size: 100%;
+}
+
+.display-6 {
+  background-color: orange;
+  border: 3px green;
+  opacity: 0.6;
+  color:black;
+}
+
+.fa-calendar-alt, .fa-dollar-sign {
+  color: orange;
+}
+
+.btn-primary {
+  background-color: orange;
+  border: orange;
+  color: black;
+}
+
+aside {
+  padding:22px;
+  display: inline-block;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+.carousel-caption {
+    top: 45%;
+  }
+.carousel-caption h4 {
+  font-size: 350%;
+  }
+
+.display-4 {
+  font-size: 200%;
+  }
+
+}
+@media (max-width: 576px) {
+ 
+.carousel-caption {
+    top: 40%;
+  }
+.carousel-caption h4 {
+    font-size: 250%;
+  }
+.display-4 {
+  font-size: 160%;
+}
+</style>
+
+<!-- ===== SAFARI PACKAGE HEADING ===== -->
+<div id="slides" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="{% static '/img/safaripackages.jpg' %}" height="420" width="100%">
+          <div class="carousel-caption">
+            <h4 class="display-4">Amazing deals to {{category.title}} </h4>
+          </div>
+      </div>
+    </div>
+</div>
+
+<!-- ======= SAFARI PACKAGE HEADING ENDING ======= -->
+
+
+<!-- SAFARI PACKAGE BODY -->
+<section>
+<div class=" container-fluid row mb-0">    
+    <div class="col-md-9 col-xs-6 mb-3 shadow">
+
+
+
+<article class="blog-post mb-3 justify-content-center">
+    <div class="maincont container-fluid row">
+  <div class=" container-fluid row text-center">
+{% for safaripackage in category.posts.all %}
+      <div class="col-md-6">
+        <div class="card mb-2 shadow">
+          <img class="card-img-top"
+            src="{{ MEDIA_URL}} {{ safaripackage.image.url }}"
+            alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">{{ safaripackage.title|title}}</h4>
+          <p><i class="far fa-calendar-alt"></i> {{ safaripackage.days|floatformat }} Days and {{ safaripackage.nights|floatformat }} Nights</p>
+            <p><i class="fas fa-dollar-sign"></i> From {{ safaripackage.cost|floatformat }} Per Person </p>
+            <hr class="my-4">
+            <p class="card-text">{{ safaripackage.telegram }}</p>
+            <a href="{% url 'safaripackages:single_safaripackage' safaripackage.pk %}" class="btn btn-primary">View Details</a>
+        </div>
+        </div>
+      </div>
+{% endfor %}  
+  </div>
+  </div>
+      
+  </article>
+      
+  </div>
+
+
+
+              <!-- ===== Side Column ===== -->
+
+
+
+    <aside class="col-lg-3 col-md-3">
+      <div class="row text-center shadow">
+        <h4 class="aside-heading mt-4 text-center"> Categories</h4>        
+      </div>
+      <div class="row-justify-centre">
+        <ul class="list-group">
+{% for category in all_categories %}
+            <a href="{% url 'safaripackages:safaricategory' category.slug %}"><li class="list-group-item">{{ category.title }}</li></a>
+{% endfor %}
+        </ul>
+        
+      </div>
+      <div class="row">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/l__qbQkAET0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+      </div>        
+      </aside>
+      
+  </div>
+</section>
+
+
+
+
+<script src="{% static 'js/bootstrapjquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="https://kit.fontawesome.com/6934a84829.js" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>
+

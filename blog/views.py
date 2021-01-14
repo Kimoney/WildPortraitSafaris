@@ -25,6 +25,6 @@ def blog(request):
 	}
 	return render (request, './blog/blog.html', context)
 
-def single_blog(request, post_id):
-  blog = Blog.objects.get(pk=post_id)
+def single_blog(request, slug):
+  blog = Blog.objects.get(slug=slug)
   return render(request, './blog/single_blog.html', {'blog': blog})

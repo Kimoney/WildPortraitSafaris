@@ -50,6 +50,9 @@ def about_us_view(request):
 def inquiry_view(request):
 	return render (request, "./main/inquiryform.html")
 
+def the_team_view(request):
+	return render (request, "./main/the_team.html")
+
 def contact_us_view(request):
 	return render (request, "./main/contact_us.html")
 

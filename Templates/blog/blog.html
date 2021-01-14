@@ -96,7 +96,7 @@ html, body {
 
     <section class="col-md-8 col-xs-8">
       {% for blog in all_blogs %}
-        <a href="{% url 'single_blog' blog.pk %}">
+        <a href="{% url 'single_blog' blog.slug %}">
         <div class="card-column row mb-3 shadow">
             <img class="card-img-top col-xs-4 col-md-4" src="{{ blog.image.url}}" height="auto" width="auto" alt="Card image cap">
             <div class="card-body col-xs-8 col-md-8">

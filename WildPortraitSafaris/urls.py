@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from pages.views import home_view, about_us_view, contact_us_view, faq_view, inquiry_view
+from pages.views import home_view, about_us_view, contact_us_view, faq_view, inquiry_view, the_team_view
 from blog.views import blog, single_blog
 from safaripackages.views import safaripackages_view, single_safaripackage, safaripackage_categories
 from django.conf import settings
@@ -26,12 +26,13 @@ urlpatterns = [
     path('', home_view, name='home'),
     path('home/', home_view, name='home'),
     path('about/', about_us_view, name='about_us'),
+    path('team',the_team_view, name='the_team'),
     path('inquiry/', inquiry_view, name='inquiry'),
     path('contact/', contact_us_view, name='contact_us'),
     path('faq', faq_view, name='faq'),
-    path('safaripackages/', safaripackages_view, name='safaripackages_view'),
-    path('safaricategory/<str:slug>', safaripackage_categories,name='safaricategory'),
-    path('single_safaripackage/<post_id>/', single_safaripackage, name='single_safaripackage'),
+    path('',include('safaripackages.urls')),
+    #path('safaripackages/<category_slug>/', include('safaripackages.urls'), safaripackage_categories, name='safaricategory'),
+   # path('single_safaripackage/<post_id>/', single_safaripackage, name='single_safaripackage'),
     path('blog/', blog, name='blog'),
-    path('single_blog/<post_id>/', single_blog, name='single_blog')
+    path('blog/<slug:slug>/', single_blog, name='single_blog')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

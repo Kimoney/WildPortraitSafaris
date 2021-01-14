@@ -22,7 +22,7 @@ class Category(models.Model):
 
 class Blog(models.Model):
 	title = models.CharField(max_length=200)
-	introduction = models.CharField(max_length=280, default=1)
+	introduction = models.CharField(max_length=280)
 	body = models.TextField()
 	image = models.ImageField(upload_to='blog/%Y/%m/%d', null=True)
 	image2 = models.ImageField(upload_to='blog/%Y/%m/%d', null=True)

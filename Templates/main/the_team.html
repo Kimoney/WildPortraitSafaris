@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'content' %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>The Team</title>
+  </head>
+
+<!-- CSS -->
+<style type="text/css">
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  color: rgb(83, 85, 83);
+  }
+
+.carousel-inner img {
+  height: 70% !important;
+  width: 100% !important;
+}
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption h1 {
+  font-size: 500%;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 15px black;
+  color: orange;
+}
+
+.class-text {
+  line-height: 2rem;
+}
+
+.jumbotron-fluid {
+  padding-top: 2em: 
+}
+@media (max-width: 768px) {
+.carousel-caption {
+    top: 45%;
+  }
+.carousel-caption h1 {
+  font-size: 350%;
+  }
+
+.display-4 {
+  font-size: 200%;
+  }
+
+}
+@media (max-width: 576px) {
+ 
+.carousel-caption {
+    top: 40%;
+  }
+.carousel-caption h1 {
+    font-size: 250%;
+  }
+.display-4 {
+  font-size: 160%;
+}
+
+</style>
+
+<body>
+<div class="container py-7">
+  <h2 class="text-uppercase text-letter-spacing-xs my-0 text-dark font-weight-bold">
+    Our Team <i class="ion-ios-body pl-1 text-primary op-8 z-index-1"></i>
+  </h2>
+  <hr class="hr-primary w-15 hr-xl ml-0 mb-5">
+  
+  <div class="row mb-5">
+    <div class="col-md-6 order-md-2">
+      <img src="{% static '/img/bro_2.jpg' %}" alt="James" class="img-fluid border-white border-w-5 w-50 w-md-80 w-lg-60 rounded-circle">
+    </div>
+    <div class="col-md-6 flex-valign text-md-right">
+      <h3 class="text-uppercase text-letter-spacing-xs mt-0 mb-1 text-dark font-weight-bold">
+        James Muchina
+      </h3>
+      <h5 class="my-0 font-weight-normal">
+        <em>CEO, Tour Guide</em>
+      </h5>
+      <hr class="hr-primary w-70 ml-0 ml-md-auto mr-md-0 mb-3">
+      <p>James is the founder of Wild Portraits Safaris</p>
+      <p>He is also a silver level tour guide, certfied by Kenya Professional Safari Guides Association (KPSGA). He has vast experience, having being an active tour guide within the past decade. He is savvy in all game, but also has vast knowledge in photography as well as birding safaris.</p>
+    </div>
+  </div>
+  
+  <div class="row mb-5">
+    <div class="col-md-6 text-md-right">
+      <img src="{% static '/img/ken_2.jpg' %}" alt="Kenneth" class="img-fluid border-white border-w-5 w-50 w-md-80 w-lg-60 rounded-circle">
+    </div>
+    <div class="col-md-6 flex-valign">
+      <h3 class="text-uppercase text-letter-spacing-xs mt-0 mb-1 text-dark font-weight-bold">
+        Kenneth Igathe
+      </h3>
+      <h5 class="my-0 font-weight-normal">
+        <em>Tour Guide</em>
+      </h5>
+      <hr class="hr-primary w-70 ml-0 mb-3">
+      <p>Kenneth is silver level tour guide, certfied by Kenya Professional Safari Guides Association (KPSGA). He is a vibrant, energetic and passionate tour guide. Kenneth is well versed and knowledgable about all parks within kenya, which makes him a valuable asset to your itinerary.</p>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-md-6 order-md-2">
+      <img src="{% static '/img/kim.jpg' %}" alt="Kim" class="img-fluid border-white border-w-5 w-50 w-md-80 w-lg-60 rounded-circle">
+    </div>
+    <div class="col-md-6 flex-valign text-md-right">
+      <h3 class="text-uppercase text-letter-spacing-xs mt-0 mb-1 text-dark font-weight-bold">
+        John Kimani
+      </h3>
+      <h5 class="my-0 font-weight-normal">
+        <em>CTO</em>
+      </h5>
+      <hr class="hr-primary w-70 ml-0 ml-md-auto mr-md-0 mb-3">
+      <p>
+        John is a co-founder of Wild Portraits Safaris. He is responsible for executive decisions with regards to the technological interests of the company. He is also responsible for outlining the company's technological vision, implementing technology strategies, and ensuring that the technological resources are aligned with the company's business needs.
+      </p>
+    </div>
+  </div>
+
+
+<hr>
+<!-- ======= About Us HEADING ENDING ======= -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
+{% endblock %}

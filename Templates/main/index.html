@@ -28,7 +28,7 @@
           <div class="carousel-caption">
             <h1 class="display-4">Wild Portrait Safaris</h1>
             <h3> Experiencing nature at it's best</h3>
-            <a href="{% url 'safaripackages_view' %}">
+            <a href="{% url 'safaripackages:safaripackages_view' %}">
             <button type="button" class="btn btn-outline-light btn-lg"> View Safari Packages</button>
             </a>
             <a href="{% url 'inquiry' %}">
@@ -116,7 +116,7 @@
             <p><i class="fas fa-dollar-sign"></i> {{ safaripackage.cost|floatformat }} Per Person (Estimated Cost)</p>
             <hr class="my-4">
             <p class="card-text">{{ safaripackage.telegram }}</p>
-            <a href="{% url 'single_safaripackage' safaripackage.pk %}" class="btn btn-primary">View Details</a>
+            <a href="{% url 'safaripackages:single_safaripackage' safaripackage.pk %}" class="btn btn-primary">View Details</a>
         </div>
         </div>
       </div>
@@ -124,7 +124,7 @@
   </div>
 
   <div class=" container text-center">
-    <a href="{% url 'safaripackages_view' %}"> <button type="button" class="btn btn-secondary btn-lg btn-block shadow">View more safari packages</button> </a>
+    <a href="{% url 'safaripackages:safaripackages_view' %}"> <button type="button" class="btn btn-secondary btn-lg btn-block shadow">View more safari packages</button> </a>
   </div>
 </div>
 </div>

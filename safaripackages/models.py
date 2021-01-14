@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.urls import reverse
 
 # Create your models here.
 
@@ -19,6 +19,11 @@ class Category(models.Model):
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
 
+
+#    def get_absolute_url(self):
+#    	return reverse('safaripackages:safaripackage_categories', args=[self.slug])
+
+
     def __str__(self):
         return self.title
 
@@ -29,7 +34,7 @@ class SafariPackages(models.Model):
 	cost = models.FloatField(null=False)
 	days = models.FloatField(blank=False, null=False)
 	nights = models.FloatField(blank=False, null=False)
-	category = models.ManyToManyField(Category)
+	category = models.ManyToManyField(Category, related_name='posts')
 	exodus = models.CharField(max_length=200)
 	destination = models.CharField(max_length=200)
 	overview = models.TextField(max_length=140, null=False)
